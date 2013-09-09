@@ -171,6 +171,18 @@ way?
 Twitter, some of which is captured by a John Vincent blog post. I blurred out
 Cliff's avatar just to be extra safe.
 
+<!SLIDE bullets>
+
+# Drift is deviation from expectations
+
+* 
+    * System libs SHOULD all be the same
+    * apache SHOULD be version 2.2.20
+
+.notes The fact that "expectations" is such a broad term is important. Note that
+one of these expectations is very broad, and the other is very specific. The
+specific ones usually find their way into "policy." The broad ones do not.
+
 <!SLIDE>
 
 # Subtle Differences Outside Policy Scope
@@ -253,8 +265,8 @@ your CM tool. "How things were yesterday." _TODO_ expand
 <!SLIDE bullets>
 # Drift is meaningless without context
 * 
-    * When did it drift?            |
-    * What drifted?                 | WHY?
+    * What changed?                 | WHY?
+    * When did it change?           |
     * What else was happening?      |
     * Who performed the change?     |
 
@@ -277,27 +289,14 @@ Control → Predictability + Interaction
 
 Certainty → Knowledge + Information
 
-where knowledge is a relationship to the
-history of what we’ve already observed in the past, i.e. an expectation of
+where knowledge is a relationship to **the
+history of what we’ve already observed in the past,** i.e. an expectation of
 behaviour, and information is evidence of the present: that things are
 proceeding as expected.
 
-Mark Burgess. "In Search of Certainty"
+Mark Burgess. "In Search of Certainty" (emphasis mine)
 
 .notes As if on cue, Mark Burgess published his book which is just chalk full of
 great quotations for a talk like this.  Control and certainty allow us to be
 productive and strategic. So how can we get there?
-
-<!SLIDE>
-
-
-
-<!SLIDE>
-Burgess and friends go a long way towards reducing surprises, but much remains.
-    using a policy to establish certainty implies a bit of hubris - implies you
-    know what's important and what isn't.
-        insert simplegeo story here
-Worst surprise is a surprise about a fundamental assumption - something that I
-thought was the same is different.
-( shpiel about finding and flagging differences, how monitoring can help, etc )
 
