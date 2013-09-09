@@ -177,15 +177,15 @@ this way?
 
 <!SLIDE>
 
-# What even IS drift?
-
-<!SLIDE>
-
 <img src="cliff.png" height="301px" class="shadow" /> 
 
 .notes This tweet sparked a good (and now impossible to find) discussion on
 Twitter, some of which is captured by a John Vincent blog post. I blurred out
 Cliff's avatar just to be extra safe.
+
+<!SLIDE>
+
+# What even IS drift?
 
 <!SLIDE>
 
@@ -249,9 +249,9 @@ surprise.
 # Drift
 
 .notes most folks that have stressed EC2 are in the somber club of people that
-have to pay attention which processor the host underlying their VMs is running.
-But it's even more obnoxious than that - the same vendor may send you two boxes
-of the same model with subtly varying BIOS settings. All that stuff is
+have to pay attention to which processor the host underlying their VMs is
+running.  But it's even more obnoxious than that - the same vendor may send you
+two boxes of the same model with subtly varying BIOS settings. All that stuff is
 important, and will eventually show up as a heisenbug.
 
 <!SLIDE>
