@@ -34,7 +34,7 @@ Catalyst during an event at Founder's Den.
 <img src="jay2.jpg" height="550" class="shadow" />
 
 .notes And here's Richard Crowley being hilarious. He's right back there if you
-have any questions about the face he's making in this photo.
+want any photobombing tips afterwards.
 
 <!SLIDE>
 
@@ -44,7 +44,9 @@ problems had been demoralizing and distracting?
 
 <!SLIDE>
 
+<img src="enable.png" height="508px" class="shadow" />
 
+<small>From Velocity 2009 [10+ Deploys Per Day: Dev and Ops Cooperation at Flickr](http://www.youtube.com/watch?v=LdOe18KhtT4)</small>
 
 .notes But in order to know what was in the way, you have to think about what
 it is you WANT to be doing. So we come back to what the role of the Ops team is,
@@ -93,7 +95,10 @@ surprises and put in place some safeguards.
 
 # Surprises = Bad
 
-.notes Surprises are what makes us sad. _TODO_ expand explanation
+<img src="lloyd.jpg" height="500px" class="shadow"/>
+
+.notes So one thing that makes us sad across the board is surprises. They're
+what keeps us in firefighting mode.
 
 <!SLIDE>
 
@@ -104,7 +109,11 @@ surprises and put in place some safeguards.
 .notes We've got quite a few ways to reduce surprises, all inspired by the idea
 of convergent operators enforcing a policy. 
 <!SLIDE>
+
 # Introducing the Million Dollar Question
+
+.notes Having a ready-fire answer to this question helps avoid surprises and
+helps resolve them quickly when they do come up. And the question is...
 
 <!SLIDE>
 
@@ -122,13 +131,20 @@ trust me, you don't know all the things that are important.
 
 <small>From Brendan Gregg's post [Modes and Modality](http://dtrace.org/blogs/brendan/2013/07/08/modes-and-modality/)</small>
 
-.notes We are perpetually answering this question using monitoring.
+.notes We are perpetually answering this question using monitoring. Here's an
+example from Brendan Gregg's post on using percentiles to identify interesting
+patterns in traffic. Begs the question: "What's different about those two
+paths?"
 
 <!SLIDE>
 
 <img src="skyline.png" height="550px" class="shadow" />
 
 <small>From Etsy's post [Introducing Kale](http://codeascraft.com/2013/06/11/introducing-kale/)</small>
+
+.notes Etsy, ever on the forefront of tooling, have released some tools for
+helping flag anomalous metrics - "Show me when things are different more
+quickly."
 
 <!SLIDE>
 
@@ -142,11 +158,11 @@ trust me, you don't know all the things that are important.
 
 Chad Fowler
 
-.notes The reason that old server is so scary is that noone knows what's
-different about it anymore. Lots of things have probably changed that are
+.notes The reason that old server is so scary is that noone knows **what's
+different** about it anymore. Lots of things have probably changed that are
 outside the policy. Drift is pervasive, especially in fast moving environments
 where the surface area for bugs and failures is vast. This leads to an erosion
-of trust and confidence.
+of confidence and, more importantly, trust.
 
 <!SLIDE>
 
@@ -156,8 +172,8 @@ of trust and confidence.
 .notes The important thing to note is that the causes for drift are often
 actually good things; it's a natural byproduct of Getting Shit Done. So what if
 we just assumed that drift was a fact of life? In fact, what if we allowed for a
-second that drift was healthy? How would our tools differ if we thought this
-way?
+second that some drift was healthy? How would our tools differ if we thought
+this way?
 
 <!SLIDE>
 
@@ -171,13 +187,20 @@ way?
 Twitter, some of which is captured by a John Vincent blog post. I blurred out
 Cliff's avatar just to be extra safe.
 
-<!SLIDE bullets>
+<!SLIDE>
 
 # Drift is deviation from expectations
+# which occurs over time
 
+.notes Expectations are what surprises are made of. A lot of expectations are
+implicit; they're our assumptions about the environment.
+
+<!SLIDE bullets>
+
+# Expectations
 * 
-    * System libs SHOULD all be the same
-    * apache SHOULD be version 2.2.20
+    * Assumption: System libs ARE all be the same
+    * Assertion: apache SHOULD be version 2.2.20
 
 .notes The fact that "expectations" is such a broad term is important. Note that
 one of these expectations is very broad, and the other is very specific. The
