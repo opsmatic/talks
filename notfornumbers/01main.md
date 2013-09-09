@@ -32,6 +32,7 @@ Catalyst during an event at Founder's Den.
 <!SLIDE>
 
 <img src="jay2.jpg" height="550" class="shadow" />
+
 .notes And here's Richard Crowley being hilarious. He's right back there if you
 have any questions about the face he's making in this photo.
 
