@@ -116,6 +116,25 @@ hosts, environments, and clusters are the most dumbfounding source of surprises
 Policy certainly goes a long way for the things you know are important. But
 trust me, you don't know all the things that are important.
 
+<!SLIDE>
+
+<img src="latency_modes.png" height="250px" class="shadow" />
+
+<small>From Brendan Gregg's post [Modes and Modality](http://dtrace.org/blogs/brendan/2013/07/08/modes-and-modality/)</small>
+
+.notes We are perpetually answering this question using monitoring.
+
+<!SLIDE>
+
+<img src="skyline.png" height="550px" class="shadow" />
+
+<small>From Etsy's post [Introducing Kale](http://codeascraft.com/2013/06/11/introducing-kale/)</small>
+
+<!SLIDE>
+
+# What Has Changed?
+
+.notes This is a special case of "What's different" because it involves time,
 
 <!SLIDE>
 > "One of the scariest things I ever encounter is a server that’s been running
@@ -136,13 +155,21 @@ of trust and confidence.
 
 .notes The important thing to note is that the causes for drift are often
 actually good things; it's a natural byproduct of Getting Shit Done. So what if
-we just assumed that drift was a fact of life? In fact, what if w eallowed for a
+we just assumed that drift was a fact of life? In fact, what if we allowed for a
 second that drift was healthy? How would our tools differ if we thought this
 way?
 
 <!SLIDE>
 
 # What even IS drift?
+
+<!SLIDE>
+
+<img src="cliff.png" height="301px" class="shadow" /> 
+
+.notes This tweet sparked a good (and now impossible to find) discussion on
+Twitter, some of which is captured by a John Vincent blog post. I blurred out
+Cliff's avatar just to be extra safe.
 
 <!SLIDE>
 
@@ -155,6 +182,15 @@ way?
 .notes It can be a package version. Or a config value. Or an env var. Or a BIOS
 setting. Or a kernel configuration value. Or a kernel module. Or a kernel module
 version.
+
+<!SLIDE>
+
+# Targetted Partial CM Runs
+
+# ==
+
+# Drift
+
 <!SLIDE>
 
 # Changes Made During Outage
@@ -185,13 +221,19 @@ important, and will eventually show up as a heisenbug.
 
 <!SLIDE>
 
+# Drift happens inside and outside "policy"
+
+<!SLIDE>
+
 # Drift is difficult to find.
 
-__TODO__ photo of yak
+<img src="yak.jpg" height="450" class="shadow" />
+
+<small>Photo by <a href="http://www.flickr.com/photos/alex_la/8512982319">alex_la</a></small>
 
 .notes Drift is usually a small set of differences. A bump on a massive surface
-area.  I dare you to come up with a better metaphor than shaving a yak. Here's
-this big hairy yak. Somewhere on this yak is a pimple. Go find it.
+area.  I dare you to come up with a better metaphor than shaving a yak. "Here's
+this big hairy yak. Somewhere on this yak is a pimple. Go find it."
 
 <!SLIDE>
 
