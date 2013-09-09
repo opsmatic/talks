@@ -356,7 +356,7 @@ data.
 
 # This dream takes a lot of work
 
-Send your dreams and usecases to **mike@opsmatic.com**
+Send your dreams and usecases to **pancakes@opsmatic.com**
 
 Let us know if this is also your dream **jobs@opsmatic.com**
 
