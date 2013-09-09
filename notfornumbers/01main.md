@@ -152,11 +152,13 @@ quickly."
 
 .notes This is a special case of "What's different" because it involves time,
 
-<!SLIDE>
-> "One of the scariest things I ever encounter is a server that’s been running
-> for ages which has seen multiple upgrades of system and application software."
+<!SLIDE quotation>
 
-Chad Fowler
+"One of the scariest things I ever encounter is a server that’s been running
+for ages which has seen multiple upgrades of system and application
+software."
+
+<p class="credit">Chad Fowler</p>
 
 .notes The reason that old server is so scary is that noone knows **what's
 different** about it anymore. Lots of things have probably changed that are
@@ -287,14 +289,16 @@ your CM tool. "How things were yesterday." _TODO_ expand
 
 <!SLIDE bullets>
 # Drift is meaningless without context
+<img src="why.png" style="float: right;" height="250px" />
+
 * 
-    * What changed?                 | WHY?
-    * When did it change?           |
-    * What else was happening?      |
-    * Who performed the change?     |
+    * What changed?
+    * When did it change?
+    * What else was happening?
+    * Who performed the change?
 
 .notes Computers are not as good at figuring out the "why" but they're pretty
-good at helping figure out who might know. _TODO_ fix the WHY bit
+good at helping figure out who might know.
 
 <!SLIDE>
 
@@ -306,20 +310,58 @@ good at helping figure out who might know. _TODO_ fix the WHY bit
 
 # Monitoring Is The Answer
 
-<!SLIDE>
+<!SLIDE quotation>
 
-Control → Predictability + Interaction
+"Control → Predictability + Interaction
+
+...
 
 Certainty → Knowledge + Information
 
 where knowledge is a relationship to **the
 history of what we’ve already observed in the past,** i.e. an expectation of
 behaviour, and information is evidence of the present: that things are
-proceeding as expected.
+proceeding as expected."
 
-Mark Burgess. "In Search of Certainty" (emphasis mine)
+<p class="credit">Mark Burgess. "In Search of Certainty" (emphasis mine)</p>
 
-.notes As if on cue, Mark Burgess published his book which is just chalk full of
+.notes As if on cue, Mark Burgess published his book which is just chock-full of
 great quotations for a talk like this.  Control and certainty allow us to be
 productive and strategic. So how can we get there?
 
+<!SLIDE bullets>
+# My Dream
+* 
+    * Ongoing **MONITORING** of infrastructure state
+        * categorical data, hence "not just for numbers"
+        * keep history, an audit trail
+    * Ability to compare states (find the pimple)
+        * across hosts
+        * across time
+    * Put computer activity in human context
+        * Who, what, when
+    * Ability to detect + flag drift
+
+<!SLIDE bullets>
+# My Dream, Bonus
+* 
+    * Exceptions, subroles, rollback
+    * Propagate changes across nodes
+        * Help me write my infrastructure-as-code
+
+.notes Essentially, CM integrated with this stream of activity and wealth of
+data.
+
+<!SLIDE>
+
+# This dream takes a lot of work
+
+Send your dreams and usecases to **mike@opsmatic.com**
+
+Let us know if this is also your dream **jobs@opsmatic.com**
+
+<!SLIDE>
+
+# Thank You!
+
+.notes Quesitons?
