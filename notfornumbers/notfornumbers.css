@@ -21,3 +21,15 @@ span.platform {
 s {
     color: #888888;
 }
+
+.sm-bullets {
+    font-size: 65%;
+}
+
+.content.sm-bullets li {
+    padding: 5px;
+}
+.content.sm-bullets li ul {
+    margin: 5px;
+    font-size: 75%;
+}

@@ -16,56 +16,51 @@ I work @ **Opsmatic**
 
 .notes I am working on better tools for operators at a company called Opsmatic.
 This talk isn't really about that company, but it's about the thought process
-that motivated us to start it and has guided our direction.
+that motivated us to start it and has guided our direction. We've been focusing
+our attention on drift detection and how changes are tracked and communicated
+under the broader premise that there is a lot of room for improvement in
+tools for web and IT operators.
 
 <!SLIDE>
 
 <img src="jay1.jpg" height="550" class="shadow" />
 
-.notes Jay and I decided we wanted to work on something related to ops and
-infrastructure. Little known fact: before Digg and all his social media glory,
-Jay worked on network infra at NetCom &amp; PAIX, then co-founded Equinix. He
-knows more about ops and networks than I think most people realize. And here he
-is, for added credibility, fixing the failover routing configuration on a Cisco
-Catalyst during an event at Founder's Den.
+.notes So while we were discussing all this, we attended a happy hour demo event
+at a coworking space. Suddenly the internet went down. The hosts had a backup
+internet line, and the Cisco Catalyst in the network closet was theoretically
+configured to fail over, but that did not happen. To make matters MORE
+interesting, the whole thing had been set up by a contractor who had since been
+fired. Nobody, including the new contractor, knew how the damn thing was set up.
+So Jay literally sat down and telnetted to a Cisco Catalyst and figured the
+configuration out, all while having graphic violent flashbacks to his days at
+NetCom. We knew then that our general premise was correct and we had work to do.
 
 <!SLIDE>
 
 <img src="jay2.jpg" height="550" class="shadow" />
 
-.notes And here's Richard Crowley being hilarious. He's right back there if you
+.notes And Richard Crowley was very excited for us. He's right back there if you
 want any photobombing tips afterwards.
 
 <!SLIDE>
 
+<img src="tool.jpg" height="550px" class="shadow" />
+
+<small>Photo by [s.benno](http://www.flickr.com/photos/9115274@N05/577382652)</small>
+
 .notes So we started thinking about what problems we'd come across in our
 experiences so far that we could help solve in a generic way. What tasks and
-problems had been demoralizing and distracting?
-
-<!SLIDE>
-
-<img src="enable.png" height="508px" class="shadow" />
-
-<small>From Velocity 2009 [10+ Deploys Per Day: Dev and Ops Cooperation at Flickr](http://www.youtube.com/watch?v=LdOe18KhtT4)</small>
-
-.notes But in order to know what was in the way, you have to think about what
-it is you WANT to be doing. So we come back to what the role of the Ops team is,
-and this whole DevOps thing. So Allspaw told us in 2009 that the job of Ops is
-"Enable the Business." Sometime after that DevOps as a movement came to be, and
-people started to realize that it's actually EVERYONE's job to enable the
-business. So now we have fields like marketing looking into DevOps ways of
-thinking. It's great!
+problems had been demoralizing and distracting? What situations left us longing
+for better tools and made us feel like we were using our time poorly?
 
 <!SLIDE>
 
 # DevOps ~= Get Shit Done
 
-.notes However, one thing that I personally think we've lost sight of along the
-way, is that Paul and John were actually encouraging people to put less weight
-into the distinction between engineering and ops. For many people, "DevOps" has
-simply replaced "Ops" as an evolution of that particular role. For the rest of
-this talk, I'm just going to talk about dev and ops as one thing with common
-goals.
+.notes I'm going to talk about Dev and Ops as a combined entity with the same
+goals - or what I take DevOps to mean in the first place. Drift isn't just a
+problem for Ops, it's a problem for any tech org as a whole, and we'll see why
+in a second.
 
 <!SLIDE bullets>
 # Happy
@@ -76,7 +71,10 @@ goals.
     * ???
     * Profit
 
-.notes So as technical staff - what does that mean for us? 
+.notes So as technical staff - what does success look like? When we're in this
+virtuous cycle, we are able to think strategically, prepare ourselves well for
+upcoming releases, communicate and document things effectively, and feel like
+we're doing something rewarding.
 
 <!SLIDE bullets>
 # Sad
@@ -85,11 +83,9 @@ goals.
     * Changes make it worse
     * Tech teams spend all their time fighting fires and each other
 
-.notes Broadly speaking, when we're dealing with unexpected contingencies, we're
-by definition in tactical mode - we can only think short term. When we have the
-ability to take a breath and settle down, we can get into tactical mode and
-actually create something new, something NICE; maybe even anticipate the next few
-surprises and put in place some safeguards.
+.notes When we're dealing with unexpected contingencies, we're by definition in
+tactical mode - we can only think short term. We don't have the time, energy, or
+organizational confidence for any of the things on the Happy slide.
 
 <!SLIDE>
 
@@ -97,8 +93,8 @@ surprises and put in place some safeguards.
 
 <img src="lloyd.jpg" height="500px" class="shadow"/>
 
-.notes So one thing that makes us sad across the board is surprises. They're
-what keeps us in firefighting mode.
+.notes Surprises are the enemy of strategy. They're what keeps us in
+firefighting mode.
 
 <!SLIDE>
 
@@ -107,7 +103,16 @@ what keeps us in firefighting mode.
 ( logos of puppet, chef, cfengine, burgess's book )
 
 .notes We've got quite a few ways to reduce surprises, all inspired by the idea
-of convergent operators enforcing a policy. 
+of convergent operators enforcing a policy. But there's a lot more work to do.
+
+<!SLIDE>
+
+<img src="cliff.png" height="301px" class="shadow" /> 
+
+.notes This tweet sparked a good (and now impossible to find) discussion on
+Twitter, some of which is captured by a John Vincent blog post. I blurred out
+Cliff's avatar just to be extra safe.
+
 <!SLIDE>
 
 # Introducing the Million Dollar Question
@@ -123,28 +128,8 @@ helps resolve them quickly when they do come up. And the question is...
 hosts, environments, and clusters are the most dumbfounding source of surprises
 \- especailly when differences happen outside of what's controlled by policy.
 Policy certainly goes a long way for the things you know are important. But
-trust me, you don't know all the things that are important.
-
-<!SLIDE>
-
-<img src="latency_modes.png" height="250px" class="shadow" />
-
-<small>From Brendan Gregg's post [Modes and Modality](http://dtrace.org/blogs/brendan/2013/07/08/modes-and-modality/)</small>
-
-.notes We are perpetually answering this question using monitoring. Here's an
-example from Brendan Gregg's post on using percentiles to identify interesting
-patterns in traffic. Begs the question: "What's different about those two
-paths?"
-
-<!SLIDE>
-
-<img src="skyline.png" height="550px" class="shadow" />
-
-<small>From Etsy's post [Introducing Kale](http://codeascraft.com/2013/06/11/introducing-kale/)</small>
-
-.notes Etsy, ever on the forefront of tooling, have released some tools for
-helping flag anomalous metrics - "Show me when things are different more
-quickly."
+trust me, you can never know everything that's important - the domain is just
+too big.
 
 <!SLIDE>
 
@@ -168,6 +153,10 @@ of confidence and, more importantly, trust.
 
 <!SLIDE>
 
+# Drift happens inside and outside "policy"
+
+<!SLIDE>
+
 # Machines Drift
 # No Matter What
 
@@ -177,13 +166,6 @@ we just assumed that drift was a fact of life? In fact, what if we allowed for a
 second that some drift was healthy? How would our tools differ if we thought
 this way?
 
-<!SLIDE>
-
-<img src="cliff.png" height="301px" class="shadow" /> 
-
-.notes This tweet sparked a good (and now impossible to find) discussion on
-Twitter, some of which is captured by a John Vincent blog post. I blurred out
-Cliff's avatar just to be extra safe.
 
 <!SLIDE>
 
@@ -222,6 +204,7 @@ version.
 
 <!SLIDE>
 
+# Subtle Differences Outside Policy Scope
 # Targetted Partial CM Runs
 
 # ==
@@ -230,6 +213,8 @@ version.
 
 <!SLIDE>
 
+# Subtle Differences Outside Policy Scope
+# Targetted Partial CM Runs
 # Changes Made During Outage
 
 # ==
@@ -244,6 +229,9 @@ surprise.
 
 <!SLIDE>
 
+# Subtle Differences Outside Policy Scope
+# Targetted Partial CM Runs
+# Changes Made During Outage
 # Varying Hardware Configuration
 
 # ==
@@ -255,10 +243,6 @@ have to pay attention to which processor the host underlying their VMs is
 running.  But it's even more obnoxious than that - the same vendor may send you
 two boxes of the same model with subtly varying BIOS settings. All that stuff is
 important, and will eventually show up as a heisenbug.
-
-<!SLIDE>
-
-# Drift happens inside and outside "policy"
 
 <!SLIDE>
 
@@ -310,6 +294,31 @@ good at helping figure out who might know.
 
 # Monitoring Is The Answer
 
+<!SLIDE>
+
+<img src="latency_modes.png" height="250px" class="shadow" />
+
+<small>From Brendan Gregg's post [Modes and Modality](http://dtrace.org/blogs/brendan/2013/07/08/modes-and-modality/)</small>
+
+.notes One of the main things for which we already use monitoring is to answer
+that question. Here's an example from Brendan Gregg's post on using percentiles
+to identify interesting patterns in traffic. Begs the question: "What's
+different about those two paths?"
+
+<!SLIDE>
+
+<img src="skyline.png" height="550px" class="shadow" />
+
+<small>From Etsy's post [Introducing Kale](http://codeascraft.com/2013/06/11/introducing-kale/)</small>
+
+.notes Etsy, ever on the forefront of tooling, have released some tools for
+helping flag anomalous metrics - "Show me when things are different more
+quickly."
+
+<!SLIDE>
+
+TODO Deployinator and related tools
+
 <!SLIDE quotation>
 
 "Control → Predictability + Interaction
@@ -329,39 +338,34 @@ proceeding as expected."
 great quotations for a talk like this.  Control and certainty allow us to be
 productive and strategic. So how can we get there?
 
-<!SLIDE bullets>
+<!SLIDE sm-bullets incremental>
 # My Dream
-* 
-    * Ongoing **MONITORING** of infrastructure state
-        * categorical data, hence "not just for numbers"
-        * keep history, an audit trail
-    * Ability to compare states (find the pimple)
-        * across hosts
-        * across time
-    * Put computer activity in human context
-        * Who, what, when
-    * Ability to detect + flag drift
-
-<!SLIDE bullets>
-# My Dream, Bonus
-* 
-    * Exceptions, subroles, rollback
-    * Propagate changes across nodes
-        * Help me write my infrastructure-as-code
+* Ongoing **MONITORING** of infrastructure state
+    * categorical data, hence "not just for numbers"
+    * keep history, an audit trail
+* Ability to compare states (find the pimple)
+    * across hosts
+    * across time
+* Put computer activity in human context
+    * Who, what, when
+* Ability to detect + flag drift
+* Exceptions, subroles, rollback
+* Propagate changes across nodes
+    * Deep CM integration/features
 
 .notes Essentially, CM integrated with this stream of activity and wealth of
 data.
 
 <!SLIDE>
 
-# This dream takes a lot of work
-
-Send your dreams and usecases to **pancakes@opsmatic.com**
-
-Let us know if this is also your dream **jobs@opsmatic.com**
+TODO Summary slide
 
 <!SLIDE>
 
 # Thank You!
+
+**jobs@opsmatic.com**
+
+( The dream is a lot of work )
 
 .notes Quesitons?
