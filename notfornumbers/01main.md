@@ -258,6 +258,22 @@ this big hairy yak. Somewhere on this yak is a pimple. Go find it."
 
 <!SLIDE>
 
+# Drift is difficult to find.
+
+<img src="yak2.png" height="450" class="shadow" />
+
+<small>Photo by <a href="http://www.flickr.com/photos/alex_la/8512982319">alex_la</a></small>
+
+<!SLIDE>
+
+# Drift is difficult to find.
+
+<img src="yak3.png" height="450" class="shadow" />
+
+<small>Photo by <a href="http://www.flickr.com/photos/alex_la/8512982319">alex_la</a></small>
+
+<!SLIDE>
+
 # ... But not for a computer!
 
 .notes Turns out computers are excellent at dealing with piles of structured
