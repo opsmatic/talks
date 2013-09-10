@@ -7,6 +7,8 @@ body {
     font-size: 12pt;
     background: url(http://localhost:9090/file/bg.png);
     color: #363636;
+    width: 11in;
+    height: 8in;
 }
 
 h1, h2, h3, h4, h5, h6 {    
