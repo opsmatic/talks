@@ -100,7 +100,8 @@ firefighting mode.
 
 # We've Come a Long Way
 
-( logos of puppet, chef, cfengine, burgess's book )
+<img src="cmlogos.png" height="550px"/>
+
 
 .notes We've got quite a few ways to reduce surprises, all inspired by the idea
 of convergent operators enforcing a policy. But there's a lot more work to do.
@@ -274,6 +275,15 @@ this big hairy yak. Somewhere on this yak is a pimple. Go find it."
 
 <!SLIDE>
 
+# Drift is difficult to find.
+
+<img src="yak4.png" height="450" class="shadow" />
+
+<small>Photo by <a href="http://www.flickr.com/photos/alex_la/8512982319">alex_la</a></small>
+
+
+<!SLIDE>
+
 # ... But not for a computer!
 
 .notes Turns out computers are excellent at dealing with piles of structured
@@ -333,7 +343,13 @@ quickly."
 
 <!SLIDE>
 
-TODO Deployinator and related tools
+<img src="deployinator.jpg" height="550px" class="shadow" />
+
+<small>From Etsy's post [The Quantum of Deployment](http://codeascraft.com/2010/05/20/quantum-of-deployment/)</small>
+
+.notes Deployinator is a tool that Etsy uses to push and log deploys, which is a
+nice foreshadow. I believe they've evolved their deploy management tool since
+this post too.
 
 <!SLIDE quotation>
 
@@ -352,7 +368,8 @@ proceeding as expected."
 
 .notes As if on cue, Mark Burgess published his book which is just chock-full of
 great quotations for a talk like this.  Control and certainty allow us to be
-productive and strategic. So how can we get there?
+productive and strategic, and to have certainty we need knowledge of both the
+current state of the system and how it got there. So how can we get there?
 
 <!SLIDE sm-bullets incremental>
 # My Dream
@@ -374,7 +391,11 @@ data.
 
 <!SLIDE>
 
-TODO Summary slide
+<img src="utopia.jpg" height="500px" class="shadow" />
+
+<small>Photo by [burningmax](http://www.flickr.com/photos/burningmax/4956641376)</small>
+
+
 
 <!SLIDE>
 
