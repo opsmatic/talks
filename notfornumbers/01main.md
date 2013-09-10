@@ -295,7 +295,10 @@ sysctl values, bios settings..
 # Drift is meaningless without a baseline
 
 .notes Fortunately, baselines are all around you. The roles/clusters/runlists in
-your CM tool. "How things were yesterday." _TODO_ expand
+your CM tool. Nodes with the same classification should be configured 
+similarly \- pretty good rule to go by. Another form of a baseline is, "How
+things were yesterday." If things were fine yesterday and are broken today,
+yesterday is your baseline.
 
 <!SLIDE bullets>
 # Drift is meaningless without context
