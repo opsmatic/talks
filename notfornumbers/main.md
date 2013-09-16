@@ -223,7 +223,7 @@ specific ones usually find their way into "policy." The broad ones do not.
 <small>Photo by <a href="http://www.flickr.com/photos/alex_la/8512982319">alex_la</a></small>
 
 .notes Drift is usually a small set of differences. A bump on a massive surface
-area.  I dare you to come up with a better metaphor than shaving a yak. "Here's
+area. I dare you to come up with a better metaphor than shaving a yak. "Here's
 this big hairy yak. Somewhere on this yak is a pimple. Go find it."
 
 <!SLIDE>
