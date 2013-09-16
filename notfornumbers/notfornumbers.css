@@ -33,3 +33,7 @@ s {
     margin: 5px;
     font-size: 75%;
 }
+
+h1 em {
+    color: #ff5818;
+}

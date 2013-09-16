@@ -79,6 +79,8 @@ frustration, so what could possibly be going wrong? Here are some examples.
 
 # Subtle Differences Outside Policy Scope
 
+# <em>SURPRISE!</em>
+
 .notes It can be a package version. Or a config value. Or an env var. Or a BIOS
 setting. Or a kernel configuration value. Or a kernel module. Or a kernel module
 version. At **SimpleGeo** we had this great bug in the distributed spatial
@@ -100,6 +102,8 @@ the results. It was fucking libc! SURPRISE!
 # Subtle Differences Outside Policy Scope
 # Targetted Partial CM Runs
 
+# <em>SURPRISE!</em>
+
 .notes This is the usecase that John's blog post is about. If you're one of the
 many people that have stopped running your CM tool in a cron (most users,
 according to my anecdotal evidence), you probably only run it when you need to
@@ -114,6 +118,8 @@ should likely be considered out of date. SURPRISE!
 # Targetted Partial CM Runs
 # Changes Made During Outage
 
+# <em>SURPRISE!</em>
+
 .notes when you just don't have the time to bother with your actual CM process.
 This, by the way, is called "Real Life." Every company I've talked to about this
 has admitted that they frequently turn off CM on a machine during an outage. CM
@@ -126,6 +132,8 @@ surprise.
 # Targetted Partial CM Runs
 # Changes Made During Outage
 # Varying Hardware Configuration
+
+# <em>SURPRISE!</em>
 
 .notes most folks that have stressed EC2 are in the somber club of people that
 have to pay attention to which processor the host underlying their VMs is
@@ -262,6 +270,10 @@ sysctl values, bios settings..
 <!SLIDE>
 
 # Drift is meaningless without a baseline
+
+<img src="baseline.jpg" class="shadow" height="450" />
+
+<small>Photo by <a href="http://www.flickr.com/photos/11253518@N07/2404330443/">SkeenaValleyGirl</a></small>
 
 .notes Fortunately, baselines are all around you. The roles/clusters/runlists in
 your CM tool. Nodes with the same classification should be configured 
