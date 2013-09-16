@@ -271,13 +271,26 @@ yesterday is your baseline.
 
 <!SLIDE bullets>
 # Drift is meaningless without context
+
+<!SLIDE sm-bullets incremental>
+
+# What even IS context?
+
+* What changed?
+* When did it change?
+* What else was happening?
+* Who performed the change?
+
+<!SLIDE sm-bullets>
+
+# What even IS context?
+
 <img src="why.png" style="float: right;" height="250px" />
 
-* 
-    * What changed?
-    * When did it change?
-    * What else was happening?
-    * Who performed the change?
+* What changed?
+* When did it change?
+* What else was happening?
+* Who performed the change?
 
 .notes Computers are not as good at figuring out the "why" but they're pretty
 good at helping figure out who might know.
