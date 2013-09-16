@@ -66,6 +66,9 @@ of convergent operators enforcing a policy. But there's a lot more work to do.
 
 <img src="cliff.png" height="301px" class="shadow" /> 
 
+<small>Relevant John Vincent blog post: <a href="http://blog.lusis.org/blog/2012/05/24/configuration-drift-and-next-gen-cm/">Configuration
+Drift and Next-gen CM</a></small>
+
 .notes This tweet sparked a good (and now impossible to find) discussion on
 Twitter, some of which is captured by a John Vincent blog post. Now, note that
 Cliff had Joe Williams, certainly a chef power user, and some other very smart
@@ -78,12 +81,32 @@ frustration, so what could possibly be going wrong? Here are some examples.
 
 .notes It can be a package version. Or a config value. Or an env var. Or a BIOS
 setting. Or a kernel configuration value. Or a kernel module. Or a kernel module
-version.
+version. At **SimpleGeo** we had this great bug in the distributed spatial
+database we built on top of Cassandra. 4 of 9 nodes exhibited this bizarre
+behavior where the JVM would get stuck in a "stop the world" pause for multiple
+minutes at a time. The nodes became completely inaccessible during this time
+(including over ssh). So we thought it was probably a bug in our experimental
+software which we wrote on top of other arguably experimental software. We spent
+all this time instrumenting the service and the JVM, and eventually were able to
+get a little reproducer program that made it very clear that it was not our
+software - the triggering conditions were just too simple and basic. So then
+what was it? It wasn't specific to a particular EC2 AZ, or a specific hardware
+configuration on the underlying hosts (which would have been a familiar
+narrative). In a moment of despair, I ran `dpkg -l` on all the hosts and diffed
+the results. It was fucking libc! SURPRISE!
 
 <!SLIDE>
 
 # Subtle Differences Outside Policy Scope
 # Targetted Partial CM Runs
+
+.notes This is the usecase that John's blog post is about. If you're one of the
+many people that have stopped running your CM tool in a cron (most users,
+according to my anecdotal evidence), you probably only run it when you need to
+"deploy" something. So if you "deploy" to your web cluster, then change a bunch
+of ACLs or other base system type settings, then deploy something to your db
+cluster, those settings are now different on those 2 clusters, and one of them
+should likely be considered out of date. SURPRISE!
 
 <!SLIDE>
 
@@ -95,7 +118,7 @@ version.
 This, by the way, is called "Real Life." Every company I've talked to about this
 has admitted that they frequently turn off CM on a machine during an outage. CM
 erasing the changes you're making to try and fix something is the worst kind of
-surprise.
+surprise. 
 
 <!SLIDE>
 
@@ -107,22 +130,25 @@ surprise.
 .notes most folks that have stressed EC2 are in the somber club of people that
 have to pay attention to which processor the host underlying their VMs is
 running.  But it's even more obnoxious than that - the same vendor may send you
-two boxes of the same model with subtly varying BIOS settings. All that stuff is
-important, and will eventually show up as a heisenbug.
-
+two boxes of the same model with subtly varying BIOS settings or drives from
+different brands or different lots which end up with somewhat differing
+performance profiles. All that stuff is important, and will eventually show up
+as a heisenbug.
 
 <!SLIDE>
 
 # Introducing the Million Dollar Question
 
-.notes Having a ready-fire answer to this question helps avoid surprises and
-helps resolve them quickly when they do come up. And the question is...
+.notes So with these sorts of surprises and pitfalls awaiting at every corner,
+there's a particular question that becomes very important. Having a ready-fire
+answer to this question helps avoid surprises and helps resolve them quickly
+when they do come up. And the question is...
 
 <!SLIDE>
 
 # What's Different?
 
-.notes this is the most important, time consuming question. Differences between
+.notes This is the most important, time consuming question. Differences between
 hosts, environments, and clusters are the most dumbfounding source of surprises
 \- especailly when differences happen outside of what's controlled by policy.
 Policy certainly goes a long way for the things you know are important. But
@@ -144,14 +170,10 @@ software."
 <p class="credit">Chad Fowler</p>
 
 .notes The reason that old server is so scary is that noone knows **what's
-different** about it anymore. Lots of things have probably changed that are
-outside the policy. Drift is pervasive, especially in fast moving environments
-where the surface area for bugs and failures is vast. This leads to an erosion
-of confidence and, more importantly, trust.
-
-<!SLIDE>
-
-# Drift happens inside and outside "policy"
+changed**. Lots of things have probably changed that are outside the policy.
+Drift is pervasive, especially in fast moving environments where the surface
+area for bugs and failures is vast. This leads to an erosion of confidence and,
+more importantly, trust.
 
 <!SLIDE>
 
@@ -181,12 +203,16 @@ implicit; they're our assumptions about the environment.
 
 # Expectations
 * 
-    * Assumption: System libs ARE all be the same
-    * Assertion: apache SHOULD be version 2.2.20
+    * **Assumption**: System libs ARE all the same
+    * **Assertion**: apache SHOULD be version 2.2.20
 
 .notes The fact that "expectations" is such a broad term is important. Note that
 one of these expectations is very broad, and the other is very specific. The
 specific ones usually find their way into "policy." The broad ones do not.
+
+<!SLIDE>
+
+# Drift happens inside and outside "policy"
 
 <!SLIDE>
 
