@@ -2,6 +2,8 @@
 
 # Monitoring - Not Just For Numbers
 
+<img src="watching.png" class="shadow" height="240" />
+
 ### Mikhail Panchenko
 
 ### Monitorama EU 9/19/2013
