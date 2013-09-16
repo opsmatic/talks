@@ -2,6 +2,9 @@
     "name": "Monitoring: It's not just for numbers",
     "description": "Talk for Monitorama EU 2013",
     "sections": [
-        "01main.md"
+        "title_monitoramaeu.md",
+        "opsmatic_story.md",
+        "main.md",
+        "fin.md"
     ]
 }

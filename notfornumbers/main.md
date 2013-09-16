@@ -1,47 +1,3 @@
-<!SLIDE title-slide>
-
-# Monitoring - Not Just For Numbers
-
-### Mikhail Panchenko
-
-### SF Metrics Meetup 09/09/2013
-
-<!SLIDE>
-
-# Hi!
-
-My name is Pancakes.
-
-I work @ **Opsmatic**
-
-.notes I am working on better tools for operators at a company called Opsmatic.
-This talk isn't really about that company, but it's about the thought process
-that motivated us to start it and has guided our direction. We've been focusing
-our attention on drift detection and how changes are tracked and communicated
-under the broader premise that there is a lot of room for improvement in
-tools for web and IT operators.
-
-<!SLIDE>
-
-<img src="jay1.jpg" height="550" class="shadow" />
-
-.notes So while we were discussing all this, we attended a happy hour demo event
-at a coworking space. Suddenly the internet went down. The hosts had a backup
-internet line, and the Cisco Catalyst in the network closet was theoretically
-configured to fail over, but that did not happen. To make matters MORE
-interesting, the whole thing had been set up by a contractor who had since been
-fired. Nobody, including the new contractor, knew how the damn thing was set up.
-So Jay literally sat down and telnetted to a Cisco Catalyst and figured the
-configuration out, all while having graphic violent flashbacks to his days at
-NetCom. We knew then that our general premise was correct and we had work to do.
-
-<!SLIDE>
-
-<img src="jay2.jpg" height="550" class="shadow" />
-
-.notes And Richard Crowley was very excited for us. He's right back there if you
-want any photobombing tips afterwards.
-
 <!SLIDE>
 
 <img src="tool.jpg" height="550px" class="shadow" />
@@ -392,20 +348,4 @@ current state of the system and how it got there. So how can we get there?
 .notes Essentially, CM integrated with this stream of activity and wealth of
 data.
 
-<!SLIDE>
 
-<img src="utopia.jpg" height="500px" class="shadow" />
-
-<small>Photo by [burningmax](http://www.flickr.com/photos/burningmax/4956641376)</small>
-
-
-
-<!SLIDE>
-
-# Thank You!
-
-**jobs@opsmatic.com**
-
-( The dream is a lot of work )
-
-.notes Quesitons?
