@@ -67,8 +67,49 @@ of convergent operators enforcing a policy. But there's a lot more work to do.
 <img src="cliff.png" height="301px" class="shadow" /> 
 
 .notes This tweet sparked a good (and now impossible to find) discussion on
-Twitter, some of which is captured by a John Vincent blog post. I blurred out
-Cliff's avatar just to be extra safe.
+Twitter, some of which is captured by a John Vincent blog post. Now, note that
+Cliff had Joe Williams, certainly a chef power user, and some other very smart
+folks working on their infrastructure. He's certainly not alone in his
+frustration, so what could possibly be going wrong? Here are some examples.
+
+<!SLIDE>
+
+# Subtle Differences Outside Policy Scope
+
+.notes It can be a package version. Or a config value. Or an env var. Or a BIOS
+setting. Or a kernel configuration value. Or a kernel module. Or a kernel module
+version.
+
+<!SLIDE>
+
+# Subtle Differences Outside Policy Scope
+# Targetted Partial CM Runs
+
+<!SLIDE>
+
+# Subtle Differences Outside Policy Scope
+# Targetted Partial CM Runs
+# Changes Made During Outage
+
+.notes when you just don't have the time to bother with your actual CM process.
+This, by the way, is called "Real Life." Every company I've talked to about this
+has admitted that they frequently turn off CM on a machine during an outage. CM
+erasing the changes you're making to try and fix something is the worst kind of
+surprise.
+
+<!SLIDE>
+
+# Subtle Differences Outside Policy Scope
+# Targetted Partial CM Runs
+# Changes Made During Outage
+# Varying Hardware Configuration
+
+.notes most folks that have stressed EC2 are in the somber club of people that
+have to pay attention to which processor the host underlying their VMs is
+running.  But it's even more obnoxious than that - the same vendor may send you
+two boxes of the same model with subtly varying BIOS settings. All that stuff is
+important, and will eventually show up as a heisenbug.
+
 
 <!SLIDE>
 
@@ -146,60 +187,6 @@ implicit; they're our assumptions about the environment.
 .notes The fact that "expectations" is such a broad term is important. Note that
 one of these expectations is very broad, and the other is very specific. The
 specific ones usually find their way into "policy." The broad ones do not.
-
-<!SLIDE>
-
-# Subtle Differences Outside Policy Scope
-
-# ==
-
-# Drift
-
-.notes It can be a package version. Or a config value. Or an env var. Or a BIOS
-setting. Or a kernel configuration value. Or a kernel module. Or a kernel module
-version.
-
-<!SLIDE>
-
-# Subtle Differences Outside Policy Scope
-# Targetted Partial CM Runs
-
-# ==
-
-# Drift
-
-<!SLIDE>
-
-# Subtle Differences Outside Policy Scope
-# Targetted Partial CM Runs
-# Changes Made During Outage
-
-# ==
-
-# Drift
-
-.notes when you just don't have the time to bother with your actual CM process.
-This, by the way, is called "Real Life." Every company I've talked to about this
-has admitted that they frequently turn off CM on a machine during an outage. CM
-erasing the changes you're making to try and fix something is the worst kind of
-surprise.
-
-<!SLIDE>
-
-# Subtle Differences Outside Policy Scope
-# Targetted Partial CM Runs
-# Changes Made During Outage
-# Varying Hardware Configuration
-
-# ==
-
-# Drift
-
-.notes most folks that have stressed EC2 are in the somber club of people that
-have to pay attention to which processor the host underlying their VMs is
-running.  But it's even more obnoxious than that - the same vendor may send you
-two boxes of the same model with subtly varying BIOS settings. All that stuff is
-important, and will eventually show up as a heisenbug.
 
 <!SLIDE>
 
