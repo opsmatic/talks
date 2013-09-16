@@ -348,6 +348,18 @@ quickly."
 nice foreshadow. I believe they've evolved their deploy management tool since
 this post too.
 
+<!SLIDE>
+
+<img src="librato-raw.png" height="500px" class="shadow" />
+
+<small><a href="https://metrics.librato.com">metrics.librato.com</a></small>
+
+<!SLIDE>
+
+<img src="librato.png" height="500px" class="shadow" />
+
+<small><a href="https://metrics.librato.com">metrics.librato.com</a></small>
+
 <!SLIDE quotation>
 
 "Control → Predictability + Interaction
