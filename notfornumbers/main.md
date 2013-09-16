@@ -386,4 +386,14 @@ current state of the system and how it got there. So how can we get there?
 .notes Essentially, CM integrated with this stream of activity and wealth of
 data.
 
+<!SLIDE sm-bullets>
 
+# Having Context Makes Things Easier
+
+<img src="log.png" height="275" class="shadow" />
+
+* Catch up quickly
+* Retrace your steps (or someone else's!)
+* Communicate changes naturally and efficiently
+
+<small>Photo by [kosmograddotnet](http://www.flickr.com/photos/kosmograddotnet/7115348833)</small>
