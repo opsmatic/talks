@@ -3,7 +3,6 @@
     "description": "Talk for Monitorama EU 2013",
     "sections": [
         "title_monitoramaeu.md",
-        "opsmatic_story.md",
         "main.md",
         "fin.md"
     ]

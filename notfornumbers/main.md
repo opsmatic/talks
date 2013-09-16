@@ -4,19 +4,19 @@
 
 <small>Photo by [s.benno](http://www.flickr.com/photos/9115274@N05/577382652)</small>
 
-.notes So we started thinking about what problems we'd come across in our
-experiences so far that we could help solve in a generic way. What tasks and
-problems had been demoralizing and distracting? What situations left us longing
-for better tools and made us feel like we were using our time poorly?
+.notes We've been thinking about problems we'd come across in our experiences so
+far that we could help solve in a generic way. What tasks and problems had been
+demoralizing and distracting? What situations left us longing for better tools
+and made us feel like we were using our time poorly?
 
 <!SLIDE>
 
 # DevOps ~= Get Shit Done
 
 .notes I'm going to talk about Dev and Ops as a combined entity with the same
-goals - or what I take DevOps to mean in the first place. Drift isn't just a
-problem for Ops, it's a problem for any tech org as a whole, and we'll see why
-in a second.
+goals - or what I take DevOps to mean in the first place. These are not just Ops
+problems. They are problems for any tech org as a whole, and we'll see why in a
+second.
 
 <!SLIDE bullets>
 # Happy
@@ -211,8 +211,8 @@ implicit; they're our assumptions about the environment.
 
 # Expectations
 * 
-    * **Assumption**: System libs ARE all the same
-    * **Assertion**: apache SHOULD be version 2.2.20
+    * **Assumption**: System libs **ARE** all the same
+    * **Assertion**: apache **SHOULD** be v. 2.2.20
 
 .notes The fact that "expectations" is such a broad term is important. Note that
 one of these expectations is very broad, and the other is very specific. The
