@@ -30,7 +30,10 @@ second.
 .notes So as technical staff - what does success look like? When we're in this
 virtuous cycle, we are able to think strategically, prepare ourselves well for
 upcoming releases, communicate and document things effectively, and feel like
-we're doing something rewarding.
+we're doing something rewarding. Note that strategic doesn't mean "try the next
+pet project I think is cool." There's all sorts of operational concerns that can
+be addressed with a little extra time - capacity planning, cost optimization,
+performance optimization, security audits and tests, etc.
 
 <!SLIDE bullets>
 # Sad
@@ -124,7 +127,7 @@ should likely be considered out of date. SURPRISE!
 This, by the way, is called "Real Life." Every company I've talked to about this
 has admitted that they frequently turn off CM on a machine during an outage. CM
 erasing the changes you're making to try and fix something is the worst kind of
-surprise. 
+surprise. [DEREK STORY]
 
 <!SLIDE>
 
@@ -220,7 +223,9 @@ specific ones usually find their way into "policy." The broad ones do not.
 
 <!SLIDE>
 
-# Drift happens inside and outside "policy"
+# Drift happens inside
+
+# and outside "policy"
 
 <!SLIDE>
 
@@ -378,7 +383,9 @@ proceeding as expected."
 .notes As if on cue, Mark Burgess published his book which is just chock-full of
 great quotations for a talk like this.  Control and certainty allow us to be
 productive and strategic, and to have certainty we need knowledge of both the
-current state of the system and how it got there. So how can we get there?
+current state of the system and how it got there. Having the context around both
+the present state and past changes helps us avoid surprises and get along
+better. So how can we get there?
 
 <!SLIDE sm-bullets incremental>
 # My Dream
@@ -409,3 +416,8 @@ data.
 * Communicate changes naturally and efficiently
 
 <small>Photo by [kosmograddotnet](http://www.flickr.com/photos/kosmograddotnet/7115348833)</small>
+
+.notes I think having quick, intuitive access to this sort of data, alongside
+traditional numeric monitoring, would greatly ease the passage towards the more
+ideal, utopian landscape described by Katherine in her talk. Transparency and
+accountability are prerequisites for trust.
